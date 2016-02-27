@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Curse.ServiceAuthentication.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Curse.ServiceAuthentication.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://clientservice-v6-beta.curse.com/ClientLoginService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="LoginRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EncryptedPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoginRequest" nillable="true" type="tns:LoginRequest" />
+  <xs:complexType name="LoginResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Session" nillable="true" type="tns:AuthenticationSession" />
+      <xs:element minOccurs="0" name="Status" type="tns:AuthenticationStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoginResponse" nillable="true" type="tns:LoginResponse" />
+  <xs:complexType name="AuthenticationSession">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActualPremiumStatus" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EffectivePremiumStatus" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubscriptionToken" type="xs:int" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuthenticationSession" nillable="true" type="tns:AuthenticationSession" />
+  <xs:simpleType name="AuthenticationStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unsuccessful" />
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="InvalidSession" />
+      <xs:enumeration value="UnauthorizedLogin" />
+      <xs:enumeration value="InvalidPassword" />
+      <xs:enumeration value="UnknownUsername" />
+      <xs:enumeration value="UnknownEmail" />
+      <xs:enumeration value="UnknownError">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">100</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IncorrectTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">101</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CorruptLibrary">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">102</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OutdatedClient">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">103</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SubscriptionMismatch">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">104</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SubscriptionExpired">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">105</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InsufficientAccessLevel">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">106</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InvalidApiKey">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">107</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MissingGrant">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">108</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AuthenticationStatus" nillable="true" type="tns:AuthenticationStatus" />
+  <xs:complexType name="RegisterRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NewsletterOptIn" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegisterRequest" nillable="true" type="tns:RegisterRequest" />
+  <xs:complexType name="RegisterUserResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:RegisterUserStatus" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegisterUserResult" nillable="true" type="tns:RegisterUserResult" />
+  <xs:simpleType name="RegisterUserStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Successful" />
+      <xs:enumeration value="EmailInUse" />
+      <xs:enumeration value="UsernameInUse" />
+      <xs:enumeration value="InsufficientPermissions" />
+      <xs:enumeration value="InvalidProfile" />
+      <xs:enumeration value="InvalidUsername" />
+      <xs:enumeration value="InvalidNetworkSite" />
+      <xs:enumeration value="InvalidPassword" />
+      <xs:enumeration value="UnknownError" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RegisterUserStatus" nillable="true" type="tns:RegisterUserStatus" />
+  <xs:complexType name="CheckUsernameAvailabilityRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckUsernameAvailabilityRequest" nillable="true" type="tns:CheckUsernameAvailabilityRequest" />
+</xs:schema>

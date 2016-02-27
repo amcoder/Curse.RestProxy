@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f04a9685-c678-4522-ab3e-be7111422ee4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://clientservice-v6-beta.curse.com/ClientLoginService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ClientLoginService.xsd" MetadataType="Schema" ID="c7b90070-bf13-4a45-b7a2-c086bbf74598" SourceId="1" SourceUrl="http://clientservice-v6-beta.curse.com/ClientLoginService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ClientLoginService1.xsd" MetadataType="Schema" ID="274ee864-742f-45e0-a869-b4b717d12585" SourceId="1" SourceUrl="http://clientservice-v6-beta.curse.com/ClientLoginService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ClientLoginService2.xsd" MetadataType="Schema" ID="5c17192e-35de-4781-ba34-4b514d2a56c2" SourceId="1" SourceUrl="http://clientservice-v6-beta.curse.com/ClientLoginService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ClientLoginService.wsdl" MetadataType="Wsdl" ID="a8cb294c-309e-48cb-b5d6-8f74451d7193" SourceId="1" SourceUrl="http://clientservice-v6-beta.curse.com/ClientLoginService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ClientLoginService1.wsdl" MetadataType="Wsdl" ID="237f86a6-7d4f-4660-9230-5a74dfcf07ce" SourceId="1" SourceUrl="http://clientservice-v6-beta.curse.com/ClientLoginService.svc?wsdl" />
+    <MetadataFile FileName="ClientLoginService.disco" MetadataType="Disco" ID="05e8d8c4-2dbc-4d00-86fe-07f8307a627a" SourceId="1" SourceUrl="http://clientservice-v6-beta.curse.com/ClientLoginService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://clientservice.curse.com/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ClientLoginService" targetNamespace="http://clientservice.curse.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://clientservice-v6-beta.curse.com/ClientLoginService.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://clientservice.curse.com/Imports">
+      <xsd:import schemaLocation="http://clientservice-v6-beta.curse.com/ClientLoginService.svc?xsd=xsd0" namespace="http://clientservice.curse.com/" />
+      <xsd:import schemaLocation="http://clientservice-v6-beta.curse.com/ClientLoginService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://clientservice-v6-beta.curse.com/ClientLoginService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Curse.ServiceAuthentication.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IClientLoginService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IClientLoginService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientLoginService_Register_InputMessage">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="IClientLoginService_Register_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientLoginService_CheckUsernameAvailability_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUsernameAvailability" />
+  </wsdl:message>
+  <wsdl:message name="IClientLoginService_CheckUsernameAvailability_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUsernameAvailabilityResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IClientLoginService">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://clientservice.curse.com/IClientLoginService/Login" message="tns:IClientLoginService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://clientservice.curse.com/IClientLoginService/LoginResponse" message="tns:IClientLoginService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <wsdl:input wsaw:Action="http://clientservice.curse.com/IClientLoginService/Register" message="tns:IClientLoginService_Register_InputMessage" />
+      <wsdl:output wsaw:Action="http://clientservice.curse.com/IClientLoginService/RegisterResponse" message="tns:IClientLoginService_Register_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUsernameAvailability">
+      <wsdl:input wsaw:Action="http://clientservice.curse.com/IClientLoginService/CheckUsernameAvailability" message="tns:IClientLoginService_CheckUsernameAvailability_InputMessage" />
+      <wsdl:output wsaw:Action="http://clientservice.curse.com/IClientLoginService/CheckUsernameAvailabilityResponse" message="tns:IClientLoginService_CheckUsernameAvailability_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="ClientLoginService">
+    <wsdl:port name="BinaryHttpClientLoginServiceEndpoint" binding="i0:BinaryHttpClientLoginServiceEndpoint">
+      <soap12:address location="http://clientservice-v6-beta.curse.com/ClientLoginService.svc/Binary" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://clientservice-v6-beta.curse.com/ClientLoginService.svc/Binary</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="BinaryHttpsClientLoginServiceEndpoint" binding="i0:BinaryHttpsClientLoginServiceEndpoint">
+      <soap12:address location="https://iis30a-live.curse.us/ClientLoginService.svc/Binary" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://iis30a-live.curse.us/ClientLoginService.svc/Binary</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

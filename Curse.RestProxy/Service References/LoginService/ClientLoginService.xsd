@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://clientservice.curse.com/" elementFormDefault="qualified" targetNamespace="http://clientservice.curse.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://clientservice-v6-beta.curse.com/ClientLoginService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Curse.ServiceAuthentication.Models" />
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Curse.ServiceAuthentication.Models" minOccurs="0" name="loginRequest" nillable="true" type="q1:LoginRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Curse.ServiceAuthentication.Models" minOccurs="0" name="LoginResult" nillable="true" type="q2:LoginResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Register">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Curse.ServiceAuthentication.Models" minOccurs="0" name="registerRequest" nillable="true" type="q3:RegisterRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Curse.ServiceAuthentication.Models" minOccurs="0" name="RegisterResult" nillable="true" type="q4:RegisterUserResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckUsernameAvailability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Curse.ServiceAuthentication.Models" minOccurs="0" name="username" nillable="true" type="q5:CheckUsernameAvailabilityRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckUsernameAvailabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckUsernameAvailabilityResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
