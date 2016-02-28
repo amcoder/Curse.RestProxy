@@ -9,13 +9,13 @@ using Moq;
 namespace Curse.RestProxy.Tests.Controllers
 {
     [TestClass]
-    public class AuthenticationControllerLoginTests
+    public class AuthenticationControllerAuthenticateTests
     {
         /*
          * Service Integration
          */
         [TestMethod]
-        public void LoginCallsClientLoginService()
+        public void AuthenticateCallsClientLoginService()
         {
             var clientLoginResponse = new LoginService.LoginResponse()
             {
@@ -24,7 +24,7 @@ namespace Curse.RestProxy.Tests.Controllers
             var service = MockClientLoginService(clientLoginResponse);
             var controller = new AuthenticationController(service);
 
-            var response = controller.Login(new Models.LoginRequest()
+            var response = controller.Authenticate(new Models.AuthenticationRequest()
             {
                 UserName = "username",
                 Password = "password"
@@ -41,7 +41,7 @@ namespace Curse.RestProxy.Tests.Controllers
          * Success
          */
         [TestMethod]
-        public void LoginReturnsOkWhenLoginSucceeds()
+        public void AuthenticateReturnsOkWhenAuthenticationSucceeds()
         {
             var clientLoginResponse = new LoginService.LoginResponse()
             {
@@ -50,18 +50,18 @@ namespace Curse.RestProxy.Tests.Controllers
             var service = MockClientLoginService(clientLoginResponse);
             var controller = new AuthenticationController(service);
 
-            var result = controller.Login(new Models.LoginRequest()
+            var result = controller.Authenticate(new Models.AuthenticationRequest()
             {
                 UserName = "username",
                 Password = "password"
             }).Result;
 
             Assert.IsInstanceOfType(result, typeof(OkNegotiatedContentResult<LoginService.LoginResponse>),
-                "Login should return ok when login succeeds");
+                "Authenticate should return ok when authentication succeeds");
         }
 
         [TestMethod]
-        public void LoginBodyContainsClientLoginResponseWhenLoginSucceeds()
+        public void AuthenticateBodyContainsClientLoginResponseWhenAuthenticationSucceeds()
         {
             var clientLoginResponse = new LoginService.LoginResponse()
             {
@@ -70,21 +70,21 @@ namespace Curse.RestProxy.Tests.Controllers
             var service = MockClientLoginService(clientLoginResponse);
             var controller = new AuthenticationController(service);
 
-            var result = controller.Login(new Models.LoginRequest()
+            var result = controller.Authenticate(new Models.AuthenticationRequest()
             {
                 UserName = "username",
                 Password = "password"
             }).Result as OkNegotiatedContentResult<LoginService.LoginResponse>;
 
             Assert.AreEqual(clientLoginResponse, result.Content,
-                "Login should return the client login response when login succeeds");
+                "Authenticate should return the client login response when authentication succeeds");
         }
 
         /*
-         * Login fails
+         * Authentication fails
          */
         [TestMethod]
-        public void LoginReturnsUnauthorizedWhenLoginFails()
+        public void AuthenticateReturnsUnauthorizedWhenAuthenticationFails()
         {
             var clientLoginResponse = new LoginService.LoginResponse()
             {
@@ -93,21 +93,21 @@ namespace Curse.RestProxy.Tests.Controllers
             var service = MockClientLoginService(clientLoginResponse);
             var controller = new AuthenticationController(service);
 
-            var result = controller.Login(new Models.LoginRequest()
+            var result = controller.Authenticate(new Models.AuthenticationRequest()
             {
                 UserName = "username",
                 Password = "password"
             }).Result;
 
             Assert.IsInstanceOfType(result, typeof(UnauthorizedResult),
-                "Login should return unauthorized when login fails");
+                "Authenticate should return unauthorized when authentication fails");
         }
 
         /*
          * Input Validation
          */
         [TestMethod]
-        public void LoginReturnsBadRequestWhenLoginRequestNull()
+        public void AuthenticateReturnsBadRequestWhenAuthenticationRequestNull()
         {
             var clientLoginResponse = new LoginService.LoginResponse()
             {
@@ -116,14 +116,14 @@ namespace Curse.RestProxy.Tests.Controllers
             var service = MockClientLoginService(clientLoginResponse);
             var controller = new AuthenticationController(service);
 
-            var result = controller.Login(null).Result;
+            var result = controller.Authenticate(null).Result;
 
             Assert.IsInstanceOfType(result, typeof(BadRequestErrorMessageResult),
-                "Login should return bad request when the login request is null");
+                "Authenticate should return bad request when the authentication request is null");
         }
 
         [TestMethod]
-        public void LoginReturnsBadRequestWhenUserNameNull()
+        public void AuthenticateReturnsBadRequestWhenUserNameNull()
         {
             var clientLoginResponse = new LoginService.LoginResponse()
             {
@@ -132,18 +132,18 @@ namespace Curse.RestProxy.Tests.Controllers
             var service = MockClientLoginService(clientLoginResponse);
             var controller = new AuthenticationController(service);
 
-            var result = controller.Login(new Models.LoginRequest()
+            var result = controller.Authenticate(new Models.AuthenticationRequest()
             {
                 UserName = null,
                 Password = "password"
             }).Result;
 
             Assert.IsInstanceOfType(result, typeof(BadRequestErrorMessageResult),
-                "Login should return bad request when the username is null");
+                "Authenticate should return bad request when the username is null");
         }
 
         [TestMethod]
-        public void LoginReturnsBadRequestWhenPasswordNull()
+        public void AuthenticateReturnsBadRequestWhenPasswordNull()
         {
             var clientLoginResponse = new LoginService.LoginResponse()
             {
@@ -152,14 +152,14 @@ namespace Curse.RestProxy.Tests.Controllers
             var service = MockClientLoginService(clientLoginResponse);
             var controller = new AuthenticationController(service);
 
-            var result = controller.Login(new Models.LoginRequest()
+            var result = controller.Authenticate(new Models.AuthenticationRequest()
             {
                 UserName = "username",
                 Password = null
             }).Result;
 
             Assert.IsInstanceOfType(result, typeof(BadRequestErrorMessageResult),
-                "Login should return bad request when the password is null");
+                "Authenticate should return bad request when the password is null");
         }
 
         private LoginService.IClientLoginService MockClientLoginService(LoginService.LoginResponse response)

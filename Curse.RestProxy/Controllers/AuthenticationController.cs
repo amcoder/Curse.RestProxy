@@ -5,7 +5,7 @@ using Curse.RestProxy.Models;
 namespace Curse.RestProxy.Controllers
 {
     [AllowAnonymous]
-    [RoutePrefix("api/auth")]
+    [RoutePrefix("api")]
     public class AuthenticationController : ApiController
     {
         private LoginService.IClientLoginService ClientLoginService { get; set; }
@@ -16,8 +16,8 @@ namespace Curse.RestProxy.Controllers
         }
 
         [HttpPost]
-        [Route("login", Name = "Login")]
-        public async Task<IHttpActionResult> Login(LoginRequest request)
+        [Route("authenticate", Name = "Authenticate")]
+        public async Task<IHttpActionResult> Authenticate(AuthenticationRequest request)
         {
             if(request == null || string.IsNullOrEmpty(request.UserName) || string.IsNullOrEmpty(request.Password))
                 return BadRequest("Username and password are required");
