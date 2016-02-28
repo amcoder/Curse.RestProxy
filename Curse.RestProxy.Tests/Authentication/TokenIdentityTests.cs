@@ -2,7 +2,7 @@
 using Curse.RestProxy.Authentication;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Curse.RestProxy.Tests.Http
+namespace Curse.RestProxy.Tests.Authentication
 {
     [TestClass]
     public class TokenIdentityTests

@@ -167,7 +167,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Http\IHttpActionResultExtensions.cs" />
-    <Compile Include="Http\TokenAuthenticationFilter.cs" />
+    <Compile Include="Authentication\TokenAuthenticationFilter.cs" />
     <Compile Include="Http\WrappedActionResult.cs" />
     <Compile Include="Models\LoginRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

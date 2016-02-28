@@ -1,5 +1,5 @@
 ﻿using System.Web.Http;
-using Curse.RestProxy.Http;
+using Curse.RestProxy.Authentication;
 using Curse.RestProxy.Serialization;
 using Newtonsoft.Json.Converters;
 

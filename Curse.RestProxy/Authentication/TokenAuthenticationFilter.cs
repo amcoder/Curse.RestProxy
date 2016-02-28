@@ -7,9 +7,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http.Filters;
 using System.Web.Http.Results;
-using Curse.RestProxy.Authentication;
+using Curse.RestProxy.Http;
 
-namespace Curse.RestProxy.Http
+namespace Curse.RestProxy.Authentication
 {
     /// <summary>
     /// Provides authentication based on a token in the Authorization header
