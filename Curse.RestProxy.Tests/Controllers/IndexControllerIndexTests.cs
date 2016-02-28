@@ -2,6 +2,7 @@
 using System.Web.Http.Results;
 using Curse.RestProxy.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
 namespace Curse.RestProxy.Tests.Controllers
 {
@@ -11,7 +12,8 @@ namespace Curse.RestProxy.Tests.Controllers
         [TestMethod]
         public void IndexReturnsOk()
         {
-            var controller = new IndexController();
+            var controller = new IndexController(Mock.Of<LoginService.IClientLoginService>(),
+                                                 Mock.Of<AddOnService.IAddOnService>());
 
             var result = controller.Index();
 
@@ -22,7 +24,8 @@ namespace Curse.RestProxy.Tests.Controllers
         [TestMethod]
         public void IndexReturnsCorrectResult()
         {
-            var controller = new IndexController();
+            var controller = new IndexController(Mock.Of<LoginService.IClientLoginService>(),
+                                                 Mock.Of<AddOnService.IAddOnService>());
 
             dynamic result = controller.Index();
 
