@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://addonservice.curse.com/" elementFormDefault="qualified" targetNamespace="http://addonservice.curse.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://addon-service.curse.com/AddOnService.svc?xsd=xsd2" namespace="Curse.AddOns" />
+  <xs:import schemaLocation="http://addon-service.curse.com/AddOnService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Curse.AddOns" />
+  <xs:import schemaLocation="http://addon-service.curse.com/AddOnService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://addon-service.curse.com/AddOnService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" />
+  <xs:import schemaLocation="http://addon-service.curse.com/AddOnService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/Message" />
+  <xs:element name="GetAddOn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddOnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="Curse.AddOns" minOccurs="0" name="GetAddOnResult" nillable="true" type="q1:AddOn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepositoryMatchFromSlug">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gameSlug" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="addonSlug" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepositoryMatchFromSlugResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Curse.AddOns" minOccurs="0" name="GetRepositoryMatchFromSlugResult" nillable="true" type="q2:RepositoryMatch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChangeLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addonID" type="xs:int" />
+        <xs:element minOccurs="0" name="fileID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChangeLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetChangeLogResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="v2GetChangeLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addonID" type="xs:int" />
+        <xs:element minOccurs="0" name="fileID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="v2GetChangeLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="v2GetChangeLogResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddOnDescription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddOnDescriptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAddOnDescriptionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="v2GetAddOnDescription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="v2GetAddOnDescriptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="v2GetAddOnDescriptionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddOnFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addonID" type="xs:int" />
+        <xs:element minOccurs="0" name="fileID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddOnFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="Curse.AddOns" minOccurs="0" name="GetAddOnFileResult" nillable="true" type="q3:AddOnFile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddOns">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q4:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddOnsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="Curse.AddOns" minOccurs="0" name="GetAddOnsResult" nillable="true" type="q5:ArrayOfAddOn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="v2GetAddOns">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q6:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="v2GetAddOnsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="Curse.AddOns" minOccurs="0" name="v2GetAddOnsResult" nillable="true" type="q7:ArrayOfAddOn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFingerprintMatches">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="fingerprints" nillable="true" type="q8:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFingerprintMatchesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="Curse.AddOns" minOccurs="0" name="GetFingerprintMatchesResult" nillable="true" type="q9:FingerprintMatchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="v2GetFingerprintMatches">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="fingerprints" nillable="true" type="q10:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="v2GetFingerprintMatchesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="Curse.AddOns" minOccurs="0" name="v2GetFingerprintMatchesResult" nillable="true" type="q11:FingerprintMatchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFuzzyMatches">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gameID" type="xs:int" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Curse.AddOns" minOccurs="0" name="folderFingerprints" nillable="true" type="q12:ArrayOfFolderFingerprint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFuzzyMatchesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="Curse.AddOns" minOccurs="0" name="GetFuzzyMatchesResult" nillable="true" type="q13:ArrayOfFuzzyMatch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDownloadToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fileID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDownloadTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="Curse.AddOns" minOccurs="0" name="GetDownloadTokenResult" nillable="true" type="q14:DownloadToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSecureDownloadToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fileID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="hasPremium" type="xs:boolean" />
+        <xs:element minOccurs="0" name="subscriptionToken" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSecureDownloadTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="Curse.AddOns" minOccurs="0" name="GetSecureDownloadTokenResult" nillable="true" type="q15:DownloadToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSyncProfile">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSyncProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="GetSyncProfileResult" nillable="true" type="q16:ServiceResponseOfArrayOfSyncedGameInstanceeheogrl4" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSyncGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="instanceName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="gameID" type="xs:int" />
+        <xs:element minOccurs="0" name="computerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="instanceGUID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="instanceLabel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSyncGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="CreateSyncGroupResult" nillable="true" type="q17:ServiceResponseOfSyncedGameInstanceeheogrl4" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="JoinSyncGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="instanceID" type="xs:int" />
+        <xs:element minOccurs="0" name="computerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="instanceGUID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="instanceLabel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="JoinSyncGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="JoinSyncGroupResult" nillable="true" type="q18:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LeaveSyncGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="instanceID" type="xs:int" />
+        <xs:element minOccurs="0" name="computerID" type="xs:int" />
+        <xs:element minOccurs="0" name="instanceGUID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LeaveSyncGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="LeaveSyncGroupResult" nillable="true" type="q19:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSyncSnapshot">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="instanceID" type="xs:int" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="syncedAddons" nillable="true" type="q20:ArrayOfSyncedAddon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSyncSnapshotResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="SaveSyncSnapshotResult" nillable="true" type="q21:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSyncTransactions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="instanceID" type="xs:int" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="transactions" nillable="true" type="q22:ArrayOfSyncTransaction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSyncTransactionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="SaveSyncTransactionsResult" nillable="true" type="q23:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSavedGames">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSavedGamesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="GetSavedGamesResult" nillable="true" type="q24:ServiceResponseOfArrayOfSavedGameeheogrl4" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSavedGame">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="savedGameId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSavedGameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="DeleteSavedGameResult" nillable="true" type="q25:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSavedGameRevision">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="savedGameId" type="xs:int" />
+        <xs:element minOccurs="0" name="savedGameRevisionId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSavedGameRevisionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="DeleteSavedGameRevisionResult" nillable="true" type="q26:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSavedGameStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="savedGameId" type="xs:int" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="status" type="q27:ESavedGameStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSavedGameStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="SetSavedGameStatusResult" nillable="true" type="q28:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSavedGameName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="savedGameId" type="xs:int" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSavedGameNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="SetSavedGameNameResult" nillable="true" type="q29:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSavedGameDescription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="savedGameId" type="xs:int" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSavedGameDescriptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="SetSavedGameDescriptionResult" nillable="true" type="q30:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSavedGameDefaultRevision">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="savedGameId" type="xs:int" />
+        <xs:element minOccurs="0" name="revisionId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSavedGameDefaultRevisionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="SetSavedGameDefaultRevisionResult" nillable="true" type="q31:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSavedGameFavoriteRevision">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="savedGameId" type="xs:int" />
+        <xs:element minOccurs="0" name="revisionId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSavedGameFavoriteRevisionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="SetSavedGameFavoriteRevisionResult" nillable="true" type="q32:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSavedGameConstraints">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSavedGameConstraintsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="GetSavedGameConstraintsResult" nillable="true" type="q33:ServiceResponseOfSavedGameConstraintseheogrl4" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSavedGameRestrictionLevel">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSavedGameRestrictionLevelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="GetSavedGameRestrictionLevelResult" nillable="true" type="q34:ServiceResponseOfESavedGameRestrictionLeveleheogrl4" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadAvailableForUser">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadAvailableForUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="UploadAvailableForUserResult" nillable="true" type="q35:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddOnDump">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddOnDumpResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.microsoft.com/Message" name="GetAddOnDumpResult" type="q36:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetAllAddonCache">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetAllAddonCacheResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ResetAllAddonCacheResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetSingleAddonCache">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetSingleAddonCacheResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ResetSingleAddonCacheResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSavedGameRestrictionLevel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="restrictionLevel" type="q37:ESavedGameRestrictionLevel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSavedGameRestrictionLevelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" minOccurs="0" name="SetSavedGameRestrictionLevelResult" nillable="true" type="q38:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HealthCheck">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HealthCheckResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HealthCheckResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllFilesForAddOn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addOnID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllFilesForAddOnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="Curse.AddOns" minOccurs="0" name="GetAllFilesForAddOnResult" nillable="true" type="q39:ArrayOfAddOnFile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -28,6 +28,10 @@ namespace Curse.RestProxy
             container.RegisterType<LoginService.IClientLoginService, LoginService.ClientLoginServiceClient>(
                 new HierarchicalLifetimeManager(),
                 new InjectionConstructor("BinaryHttpsClientLoginServiceEndpoint"));
+
+            container.RegisterType<AddOnService.IAddOnService, AddOnService.AddOnServiceClient>(
+                new HierarchicalLifetimeManager(),
+                new InjectionConstructor("BinaryHttpsAddOnServiceEndpoint"));
         }
     }
 }

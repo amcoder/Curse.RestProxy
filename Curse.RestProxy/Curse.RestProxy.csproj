@@ -142,9 +142,75 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <None Include="Service References\AddOnService\AddOnService.wsdl" />
+    <None Include="Service References\AddOnService\AddOnService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AddOnService\AddOnService1.wsdl" />
+    <None Include="Service References\AddOnService\AddOnService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AddOnService\AddOnService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AddOnService\AddOnService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AddOnService\AddOnService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AddOnService\AddOnService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AddOnService\AddOnService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\AddOnService\Curse.RestProxy.AddOnService.AddOn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AddOnService\Curse.RestProxy.AddOnService.AddOnFile.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AddOnService\Curse.RestProxy.AddOnService.DownloadToken.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AddOnService\Curse.RestProxy.AddOnService.FingerprintMatchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AddOnService\Curse.RestProxy.AddOnService.FuzzyMatch.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AddOnService\Curse.RestProxy.AddOnService.RepositoryMatch.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AddOnService\Curse.RestProxy.AddOnService.ServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AddOnService\Curse.RestProxy.AddOnService.ServiceResponseOfArrayOfSavedGameeheogrl4.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AddOnService\Curse.RestProxy.AddOnService.ServiceResponseOfArrayOfSyncedGameInstanceeheogrl4.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AddOnService\Curse.RestProxy.AddOnService.ServiceResponseOfESavedGameRestrictionLeveleheogrl4.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AddOnService\Curse.RestProxy.AddOnService.ServiceResponseOfSavedGameConstraintseheogrl4.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AddOnService\Curse.RestProxy.AddOnService.ServiceResponseOfSyncedGameInstanceeheogrl4.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\LoginService\ClientLoginService.disco" />
     <None Include="Service References\LoginService\configuration91.svcinfo" />
     <None Include="Service References\LoginService\configuration.svcinfo" />
+    <None Include="Service References\AddOnService\AddOnService.disco" />
+    <None Include="Service References\AddOnService\configuration91.svcinfo" />
+    <None Include="Service References\AddOnService\configuration.svcinfo" />
+    <None Include="Service References\AddOnService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Service References\LoginService\Curse.RestProxy.LoginService.LoginResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -171,6 +237,11 @@
     <Compile Include="Http\WrappedActionResult.cs" />
     <Compile Include="Models\LoginRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AddOnService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\LoginService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -209,6 +280,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AddOnService\" />
     <WCFMetadataStorage Include="Service References\LoginService\" />
   </ItemGroup>
   <PropertyGroup>

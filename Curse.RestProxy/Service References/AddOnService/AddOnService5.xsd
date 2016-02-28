@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Curse.AddOns" elementFormDefault="qualified" targetNamespace="Curse.AddOns" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://addon-service.curse.com/AddOnService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Curse.AddOns" />
+  <xs:import schemaLocation="http://addon-service.curse.com/AddOnService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="AddOn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Attachments" nillable="true" type="tns:ArrayOfAddOnAttachment" />
+      <xs:element minOccurs="0" name="Authors" nillable="true" type="tns:ArrayOfAddOnAuthor" />
+      <xs:element minOccurs="0" name="AvatarUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Categories" nillable="true" type="tns:ArrayOfAddOnCategory" />
+      <xs:element minOccurs="0" name="CategorySection" nillable="true" type="tns:CategorySection" />
+      <xs:element minOccurs="0" name="CommentCount" type="xs:int" />
+      <xs:element minOccurs="0" name="DefaultFileId" type="xs:int" />
+      <xs:element minOccurs="0" name="DonationUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DownloadCount" type="xs:double" />
+      <xs:element minOccurs="0" name="ExternalUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GameId" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Curse.AddOns" minOccurs="0" name="GameVersionLatestFiles" nillable="true" type="q1:ArrayOfGameVersionLatestFile" />
+      <xs:element minOccurs="0" name="IconId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="InstallCount" type="xs:int" />
+      <xs:element minOccurs="0" name="IsFeatured" type="xs:int" />
+      <xs:element minOccurs="0" name="LatestFiles" nillable="true" type="tns:ArrayOfAddOnFile" />
+      <xs:element minOccurs="0" name="Likes" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Curse.AddOns" minOccurs="0" name="PackageType" type="q2:PackageTypes" />
+      <xs:element minOccurs="0" name="PopularityScore" type="xs:double" />
+      <xs:element minOccurs="0" name="PrimaryAuthorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryCategoryAvatarUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryCategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="PrimaryCategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rating" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Curse.AddOns" minOccurs="0" name="Stage" type="q3:ProjectStage" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Curse.AddOns" minOccurs="0" name="Status" type="q4:ProjectStatus" />
+      <xs:element minOccurs="0" name="Summary" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WebSiteURL" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddOn" nillable="true" type="tns:AddOn" />
+  <xs:complexType name="ArrayOfAddOnAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddOnAttachment" nillable="true" type="tns:AddOnAttachment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddOnAttachment" nillable="true" type="tns:ArrayOfAddOnAttachment" />
+  <xs:complexType name="AddOnAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDefault" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ThumbnailUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddOnAttachment" nillable="true" type="tns:AddOnAttachment" />
+  <xs:complexType name="ArrayOfAddOnAuthor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddOnAuthor" nillable="true" type="tns:AddOnAuthor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddOnAuthor" nillable="true" type="tns:ArrayOfAddOnAuthor" />
+  <xs:complexType name="AddOnAuthor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddOnAuthor" nillable="true" type="tns:AddOnAuthor" />
+  <xs:complexType name="ArrayOfAddOnCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddOnCategory" nillable="true" type="tns:AddOnCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddOnCategory" nillable="true" type="tns:ArrayOfAddOnCategory" />
+  <xs:complexType name="AddOnCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddOnCategory" nillable="true" type="tns:AddOnCategory" />
+  <xs:complexType name="CategorySection">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExtraIncludePattern" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GameID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="InitialInclusionPattern" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Curse.AddOns" minOccurs="0" name="PackageType" type="q5:PackageTypes" />
+      <xs:element minOccurs="0" name="Path" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategorySection" nillable="true" type="tns:CategorySection" />
+  <xs:complexType name="ArrayOfAddOnFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddOnFile" nillable="true" type="tns:AddOnFile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddOnFile" nillable="true" type="tns:ArrayOfAddOnFile" />
+  <xs:complexType name="AddOnFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlternateFileId" type="xs:int" />
+      <xs:element minOccurs="0" name="Dependencies" nillable="true" type="tns:ArrayOfAddOnFileDependency" />
+      <xs:element minOccurs="0" name="DownloadURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileNameOnDisk" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Curse.AddOns" minOccurs="0" name="FileStatus" type="q6:FileStatus" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GameVersion" nillable="true" type="q7:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsAlternate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAvailable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Modules" nillable="true" type="tns:ArrayOfAddOnModule" />
+      <xs:element minOccurs="0" name="PackageFingerprint" type="xs:long" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Curse.AddOns" minOccurs="0" name="ReleaseType" type="q8:FileType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddOnFile" nillable="true" type="tns:AddOnFile" />
+  <xs:complexType name="ArrayOfAddOnFileDependency">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddOnFileDependency" nillable="true" type="tns:AddOnFileDependency" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddOnFileDependency" nillable="true" type="tns:ArrayOfAddOnFileDependency" />
+  <xs:complexType name="AddOnFileDependency">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddOnId" type="xs:int" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Curse.AddOns" minOccurs="0" name="Type" type="q9:DependencyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddOnFileDependency" nillable="true" type="tns:AddOnFileDependency" />
+  <xs:complexType name="ArrayOfAddOnModule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddOnModule" nillable="true" type="tns:AddOnModule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddOnModule" nillable="true" type="tns:ArrayOfAddOnModule" />
+  <xs:complexType name="AddOnModule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fingerprint" type="xs:long" />
+      <xs:element minOccurs="0" name="Foldername" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddOnModule" nillable="true" type="tns:AddOnModule" />
+  <xs:complexType name="ArrayOfAddOn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddOn" nillable="true" type="tns:AddOn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddOn" nillable="true" type="tns:ArrayOfAddOn" />
+  <xs:complexType name="FingerprintMatchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExactMatches" nillable="true" type="tns:ArrayOfFingerprintMatch" />
+      <xs:element minOccurs="0" name="IsCacheBuilt" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PartialMatches" nillable="true" type="tns:ArrayOfFingerprintMatch" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FingerprintMatchResult" nillable="true" type="tns:FingerprintMatchResult" />
+  <xs:complexType name="ArrayOfFingerprintMatch">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FingerprintMatch" nillable="true" type="tns:FingerprintMatch" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFingerprintMatch" nillable="true" type="tns:ArrayOfFingerprintMatch" />
+  <xs:complexType name="FingerprintMatch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:AddOnFile" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LatestFiles" nillable="true" type="tns:ArrayOfAddOnFile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FingerprintMatch" nillable="true" type="tns:FingerprintMatch" />
+  <xs:complexType name="ArrayOfFuzzyMatch">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FuzzyMatch" nillable="true" type="tns:FuzzyMatch" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFuzzyMatch" nillable="true" type="tns:ArrayOfFuzzyMatch" />
+  <xs:complexType name="FuzzyMatch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:AddOnFile" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LatestFiles" nillable="true" type="tns:ArrayOfAddOnFile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FuzzyMatch" nillable="true" type="tns:FuzzyMatch" />
+  <xs:complexType name="DownloadToken">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DownloadToken" nillable="true" type="tns:DownloadToken" />
+</xs:schema>

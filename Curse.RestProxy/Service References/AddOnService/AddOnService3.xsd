@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://addon-service.curse.com/AddOnService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ServiceResponseOfArrayOfSyncedGameInstanceeheogrl4">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfSyncedGameInstance" Namespace="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:ServiceResponseStatus" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="tns:ArrayOfSyncedGameInstance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfSyncedGameInstanceeheogrl4" nillable="true" type="tns:ServiceResponseOfArrayOfSyncedGameInstanceeheogrl4" />
+  <xs:simpleType name="ServiceResponseStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Successful">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UnknownException">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JoinSyncGroup_GroupNotFound">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JoinSyncGroup_AlreadyInGroup">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CreateSyncGroup_GroupAlreadyExists">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LeaveSyncGroup_GroupNotFound">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LeaveSyncGroup_ComputerNotFound">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SaveSyncSnapshot_GroupNotFound">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SaveSyncTransactions_GroupNotFound">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DeleteSavedGame_SavedGameNotFound">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DeleteSavedGameRevision_SavedGameNotFound">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DeleteSavedGameRevision_RevisionNotFound">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SetSavedGameStatus_SavedGameNotFound">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">13</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SetSavedGameName_SavedGameNotFound">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">14</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SetSavedGameDescription_SavedGameNotFound">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">15</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SetSavedGameDefaultRevision_SavedGameNotFound">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SetSavedGameDefaultRevision_RevisionNotFound">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">17</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SetSavedGameFavoriteRevision_SavedGameNotFound">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">18</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SetSavedGameFavoriteRevision_RevisionNotFound">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">19</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UserOrSlotsAvailable_NoCloudSlotsAvailable">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServiceResponseStatus" nillable="true" type="tns:ServiceResponseStatus" />
+  <xs:complexType name="ArrayOfSyncedGameInstance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SyncedGameInstance" nillable="true" type="tns:SyncedGameInstance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSyncedGameInstance" nillable="true" type="tns:ArrayOfSyncedGameInstance" />
+  <xs:complexType name="SyncedGameInstance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Addons" nillable="true" type="tns:ArrayOfSyncedAddon" />
+      <xs:element minOccurs="0" name="Computers" nillable="true" type="tns:ArrayOfSyncedComputer" />
+      <xs:element minOccurs="0" name="GameID" type="xs:int" />
+      <xs:element minOccurs="0" name="InstanceID" type="xs:int" />
+      <xs:element minOccurs="0" name="InstanceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastBackupDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastBackupFingerprint" type="xs:long" />
+      <xs:element minOccurs="0" name="LastBackupScreenHeight" type="xs:long" />
+      <xs:element minOccurs="0" name="LastBackupScreenWidth" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SyncedGameInstance" nillable="true" type="tns:SyncedGameInstance" />
+  <xs:complexType name="ArrayOfSyncedAddon">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SyncedAddon" nillable="true" type="tns:SyncedAddon" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSyncedAddon" nillable="true" type="tns:ArrayOfSyncedAddon" />
+  <xs:complexType name="SyncedAddon">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddonID" type="xs:int" />
+      <xs:element minOccurs="0" name="FileID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SyncedAddon" nillable="true" type="tns:SyncedAddon" />
+  <xs:complexType name="ArrayOfSyncedComputer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SyncedComputer" nillable="true" type="tns:SyncedComputer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSyncedComputer" nillable="true" type="tns:ArrayOfSyncedComputer" />
+  <xs:complexType name="SyncedComputer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComputerID" type="xs:int" />
+      <xs:element minOccurs="0" name="ComputerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstanceGuid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstanceLabel" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SyncedComputer" nillable="true" type="tns:SyncedComputer" />
+  <xs:complexType name="ServiceResponseOfSyncedGameInstanceeheogrl4">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="SyncedGameInstance" Namespace="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:ServiceResponseStatus" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="tns:SyncedGameInstance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfSyncedGameInstanceeheogrl4" nillable="true" type="tns:ServiceResponseOfSyncedGameInstanceeheogrl4" />
+  <xs:complexType name="ServiceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:ServiceResponseStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResponse" nillable="true" type="tns:ServiceResponse" />
+  <xs:complexType name="ArrayOfSyncTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SyncTransaction" nillable="true" type="tns:SyncTransaction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSyncTransaction" nillable="true" type="tns:ArrayOfSyncTransaction" />
+  <xs:complexType name="SyncTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddonID" type="xs:int" />
+      <xs:element minOccurs="0" name="FileID" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" type="tns:SyncTransactionType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SyncTransaction" nillable="true" type="tns:SyncTransaction" />
+  <xs:simpleType name="SyncTransactionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Install" />
+      <xs:enumeration value="Delete" />
+      <xs:enumeration value="Update" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SyncTransactionType" nillable="true" type="tns:SyncTransactionType" />
+  <xs:complexType name="ServiceResponseOfArrayOfSavedGameeheogrl4">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfSavedGame" Namespace="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:ServiceResponseStatus" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="tns:ArrayOfSavedGame" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfSavedGameeheogrl4" nillable="true" type="tns:ServiceResponseOfArrayOfSavedGameeheogrl4" />
+  <xs:complexType name="ArrayOfSavedGame">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SavedGame" nillable="true" type="tns:SavedGame" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSavedGame" nillable="true" type="tns:ArrayOfSavedGame" />
+  <xs:complexType name="SavedGame">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateCreated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateModified" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DefaultRevisionID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GameID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SavedGameRevisions" nillable="true" type="tns:ArrayOfSavedGameRevision" />
+      <xs:element minOccurs="0" name="Status" type="tns:ESavedGameStatus" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SavedGame" nillable="true" type="tns:SavedGame" />
+  <xs:complexType name="ArrayOfSavedGameRevision">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SavedGameRevision" nillable="true" type="tns:SavedGameRevision" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSavedGameRevision" nillable="true" type="tns:ArrayOfSavedGameRevision" />
+  <xs:complexType name="SavedGameRevision">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComputerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateCreated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DownloadUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileSize" type="xs:long" />
+      <xs:element minOccurs="0" name="Fingerprint" type="xs:long" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="SavedGameID" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" type="tns:SavedGameRevisionStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SavedGameRevision" nillable="true" type="tns:SavedGameRevision" />
+  <xs:simpleType name="SavedGameRevisionStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Active">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Deleted">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SavedGameRevisionStatus" nillable="true" type="tns:SavedGameRevisionStatus" />
+  <xs:simpleType name="ESavedGameStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Private">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Public">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ESavedGameStatus" nillable="true" type="tns:ESavedGameStatus" />
+  <xs:complexType name="ServiceResponseOfSavedGameConstraintseheogrl4">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="SavedGameConstraints" Namespace="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:ServiceResponseStatus" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="tns:SavedGameConstraints" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfSavedGameConstraintseheogrl4" nillable="true" type="tns:ServiceResponseOfSavedGameConstraintseheogrl4" />
+  <xs:complexType name="SavedGameConstraints">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MaxRevionCount" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxSavedGameCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SavedGameConstraints" nillable="true" type="tns:SavedGameConstraints" />
+  <xs:complexType name="ServiceResponseOfESavedGameRestrictionLeveleheogrl4">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ESavedGameRestrictionLevel" Namespace="http://schemas.datacontract.org/2004/07/Curse.ClientService.Models" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:ServiceResponseStatus" />
+      <xs:element minOccurs="0" name="Value" type="tns:ESavedGameRestrictionLevel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfESavedGameRestrictionLeveleheogrl4" nillable="true" type="tns:ServiceResponseOfESavedGameRestrictionLeveleheogrl4" />
+  <xs:simpleType name="ESavedGameRestrictionLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Disabled">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PremiumOnly">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AllUsers">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ESavedGameRestrictionLevel" nillable="true" type="tns:ESavedGameRestrictionLevel" />
+</xs:schema>
