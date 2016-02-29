@@ -8,10 +8,10 @@ using Moq;
 namespace Curse.RestProxy.Tests.Controllers
 {
     [TestClass]
-    public class AddOnControllerGetAddOnTests
+    public class AddOnControllerGetTests
     {
         [TestMethod]
-        public void GetAddOnReturnsOkWhenAddOnFound()
+        public void GetReturnsOkWhenAddOnFound()
         {
             var addOn = new AddOnService.AddOn();
             var addOnService = Mock.Of<AddOnService.IAddOnService>(s =>
@@ -20,14 +20,14 @@ namespace Curse.RestProxy.Tests.Controllers
 
             var controller = new AddOnController(addOnService);
 
-            var result = controller.GetAddOn(1).Result;
+            var result = controller.Get(1).Result;
 
             Assert.IsInstanceOfType(result, typeof(OkNegotiatedContentResult<AddOnService.AddOn>),
-                "GetAddOn should return Ok when the addon is found");
+                "Get should return Ok when the addon is found");
         }
 
         [TestMethod]
-        public void GetAddOnReturnsResultFromAddOnService()
+        public void GetReturnsResultFromAddOnService()
         {
             var addOn = new AddOnService.AddOn();
             var addOnService = Mock.Of<AddOnService.IAddOnService>(s =>
@@ -36,14 +36,14 @@ namespace Curse.RestProxy.Tests.Controllers
 
             var controller = new AddOnController(addOnService);
 
-            var result = controller.GetAddOn(1).Result as OkNegotiatedContentResult<AddOnService.AddOn>;
+            var result = controller.Get(1).Result as OkNegotiatedContentResult<AddOnService.AddOn>;
 
             Assert.AreEqual(addOn, result.Content,
-                "GetAddOn should return result from the addon service");
+                "Get should return result from the addon service");
         }
 
         [TestMethod]
-        public void GetAddOnReturnsNotFoundWhenAddOnDoesNotExist()
+        public void GetReturnsNotFoundWhenAddOnDoesNotExist()
         {
             var addOnService = Mock.Of<AddOnService.IAddOnService>(s =>
                 s.GetAddOnAsync(1) == Task.FromResult((AddOnService.AddOn)null)
@@ -51,10 +51,10 @@ namespace Curse.RestProxy.Tests.Controllers
 
             var controller = new AddOnController(addOnService);
 
-            var result = controller.GetAddOn(1).Result;
+            var result = controller.Get(1).Result;
 
             Assert.IsInstanceOfType(result, typeof(NotFoundResult),
-                "GetAddOn should return not found when addon does not exist");
+                "Get should return not found when addon does not exist");
         }
     }
 }

@@ -14,8 +14,8 @@ namespace Curse.RestProxy.Controllers
         }
 
         [HttpGet]
-        [Route("{id}", Name = "GetAddOn")]
-        public async Task<IHttpActionResult> GetAddOn(int id)
+        [Route("{id}", Name = "AddOn")]
+        public async Task<IHttpActionResult> Get(int id)
         {
             var result = await AddOnService.GetAddOnAsync(id);
 
@@ -26,8 +26,8 @@ namespace Curse.RestProxy.Controllers
         }
 
         [HttpGet]
-        [Route("{id}/description", Name = "GetAddOnDescription")]
-        public async Task<IHttpActionResult> GetAddOnDescription(int id)
+        [Route("{id}/description", Name = "AddOnDescription")]
+        public async Task<IHttpActionResult> Description(int id)
         {
             var result = await AddOnService.v2GetAddOnDescriptionAsync(id);
 
