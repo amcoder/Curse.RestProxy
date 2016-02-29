@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Security.Principal;
@@ -55,11 +54,8 @@ namespace Curse.RestProxy.Authentication
         {
             context.Result = context.Result.With(response =>
             {
-                if(response.StatusCode == System.Net.HttpStatusCode.Unauthorized &&
-                    !response.Headers.WwwAuthenticate.Any((h) => h.Scheme == "Token"))
-                {
-                    response.Headers.WwwAuthenticate.Add(new AuthenticationHeaderValue("Token", "realm=\"api\""));
-                }
+                if(response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                    response.AddWwwAuthenticateTokenHeader();
             });
             return Task.FromResult(0);
         }

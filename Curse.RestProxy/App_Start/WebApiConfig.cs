@@ -23,6 +23,7 @@ namespace Curse.RestProxy
             config.Filters.Add(new TokenAuthenticationFilter());
             config.Filters.Add(new AuthorizeAttribute());
             config.Filters.Add(new SetCurseTokenActionFilter());
+            config.Filters.Add(new CurseFailedAuthenticationExceptionFilter());
 
             // Configure dependency injection
             DependencyContainerConfig.Configure(config);

@@ -227,6 +227,7 @@
     <Compile Include="AddOnService\TokenEndpointBehavior.cs" />
     <Compile Include="App_Start\DependencyContainerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Authentication\CurseFailedAuthenticationExceptionFilter.cs" />
     <Compile Include="Authentication\SetCurseTokenActionFilter.cs" />
     <Compile Include="Authentication\TokenIdentity.cs" />
     <Compile Include="Controllers\AddOnController.cs" />
@@ -235,6 +236,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Http\HttpResponseMessageExtensions.cs" />
     <Compile Include="Http\IHttpActionResultExtensions.cs" />
     <Compile Include="Authentication\TokenAuthenticationFilter.cs" />
     <Compile Include="Http\WrappedActionResult.cs" />
