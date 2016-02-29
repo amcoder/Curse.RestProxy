@@ -224,8 +224,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddOnService\TokenEndpointBehavior.cs" />
     <Compile Include="App_Start\DependencyContainerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Authentication\SetCurseTokenActionFilter.cs" />
     <Compile Include="Authentication\TokenIdentity.cs" />
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
