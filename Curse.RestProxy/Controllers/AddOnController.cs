@@ -24,5 +24,17 @@ namespace Curse.RestProxy.Controllers
 
             return Ok(result);
         }
+
+        [HttpGet]
+        [Route("{id}/description", Name = "GetAddOnDescription")]
+        public async Task<IHttpActionResult> GetAddOnDescription(int id)
+        {
+            var result = await AddOnService.v2GetAddOnDescriptionAsync(id);
+
+            if(result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
     }
 }

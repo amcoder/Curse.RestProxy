@@ -65,6 +65,7 @@
     <Compile Include="Authentication\TokenIdentityTests.cs" />
     <Compile Include="Controllers\IndexControllerStatusTests.cs" />
     <Compile Include="Controllers\AddOnControllerGetAddOnTests.cs" />
+    <Compile Include="Controllers\AddOnControllerGetAddOnDescriptionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serialization\SnakeCasePropertyNamesContractResolverTests.cs" />
   </ItemGroup>
