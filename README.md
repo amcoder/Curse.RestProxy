@@ -24,7 +24,8 @@ to allow other platforms easier access to the Curse client services.
 
 ### Post Data
 
-The API only accepts post data in `application/json` format. The following header must be on the request:
+The API only accepts post data in `application/json` format. The following header must be on all
+POST requests:
 
 	Content-Type: application/json
 
