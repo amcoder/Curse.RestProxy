@@ -231,6 +231,7 @@
     <Compile Include="Authentication\SetCurseTokenActionFilter.cs" />
     <Compile Include="Authentication\TokenIdentity.cs" />
     <Compile Include="Controllers\AddOnController.cs" />
+    <Compile Include="Controllers\AddOnFilesController.cs" />
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Global.asax.cs">

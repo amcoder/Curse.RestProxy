@@ -66,6 +66,9 @@
     <Compile Include="Controllers\IndexControllerStatusTests.cs" />
     <Compile Include="Controllers\AddOnControllerGetTests.cs" />
     <Compile Include="Controllers\AddOnControllerDescriptionTests.cs" />
+    <Compile Include="Controllers\AddOnFilesControllerIndexTests.cs" />
+    <Compile Include="Controllers\AddOnFilesControllerGetTests.cs" />
+    <Compile Include="Controllers\AddOnFilesControllerChangelogTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serialization\SnakeCasePropertyNamesContractResolverTests.cs" />
   </ItemGroup>
