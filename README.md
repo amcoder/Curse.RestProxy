@@ -22,6 +22,12 @@ to allow other platforms easier access to the Curse client services.
 
 ## Usage
 
+### Post Data
+
+The API only accepts post data in `application/json` format. The following header must be on the request:
+
+	Content-Type: application/json
+
 ### Authentication
 
 Usage of the Curse WCF services requires authentication with a valid username and password.
@@ -30,7 +36,7 @@ Authenticating will return a token that can be used on subsequent calls to the s
 To authenticate, send a POST request to `/api/authenticate`.
 
 	POST https://curse-rest-proxy.azurewebsites.net/api/authenticate
-	Accept: application/json
+	Content-Type: application/json
 	{
 	  "username": "<your curse username or email>",
 	  "password": "<your password>"
@@ -72,7 +78,6 @@ the value of `Token <userid>:<token>` where `userid` and `token` come from the a
 For example:
 
 	GET https://curse-rest-proxy.azurewebsites.net/api/addon/1
-	Content-Type: application/json
 	Authorization: Token 12345:your token
 
 If the header is missing, not in the correct form, or the token is rejected by Curse, the API will
@@ -96,7 +101,7 @@ Get the details for an add on.
 #### Request
 
 	GET https://curse-rest-proxy.azurewebsites.net/api/addon/1
-	Accept: application/json
+	Content-Type: application/json
 
 #### Response
 
