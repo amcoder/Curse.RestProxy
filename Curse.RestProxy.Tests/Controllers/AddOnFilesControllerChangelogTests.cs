@@ -11,7 +11,7 @@ namespace Curse.RestProxy.Tests.Controllers
     public class AddOnFilesControllerChangelogTests
     {
         [TestMethod]
-        public void GetReturnsOkWhenFileFound()
+        public void ChangelogReturnsOkWhenFileFound()
         {
             var changelog = "changes";
             var addOnService = Mock.Of<AddOnService.IAddOnService>(s =>
@@ -27,7 +27,7 @@ namespace Curse.RestProxy.Tests.Controllers
         }
 
         [TestMethod]
-        public void GetReturnsResultFromAddOnService()
+        public void ChangelogReturnsResultFromAddOnService()
         {
             var changelog = "changes";
             var addOnService = Mock.Of<AddOnService.IAddOnService>(s =>
@@ -43,7 +43,7 @@ namespace Curse.RestProxy.Tests.Controllers
         }
 
         [TestMethod]
-        public void GetReturnsNotFoundWhenFileDoesNotExist()
+        public void ChangelogReturnsNotFoundWhenFileDoesNotExist()
         {
             var addOnService = Mock.Of<AddOnService.IAddOnService>(s =>
                 s.v2GetChangeLogAsync(1, 2) == Task.FromResult((string)null)
