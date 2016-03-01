@@ -22,7 +22,7 @@ namespace Curse.RestProxy.Tests.Controllers
 
             var result = controller.Description(1).Result;
 
-            Assert.IsInstanceOfType(result, typeof(OkNegotiatedContentResult<string>),
+            Assert.IsTrue(result.GetType().FullName.StartsWith("System.Web.Http.Results.OkNegotiatedContentResult"),
                 "Description should return Ok when the addon is found");
         }
 
@@ -36,9 +36,9 @@ namespace Curse.RestProxy.Tests.Controllers
 
             var controller = new AddOnController(addOnService);
 
-            var result = controller.Description(1).Result as OkNegotiatedContentResult<string>;
+            dynamic result = controller.Description(1).Result;
 
-            Assert.AreEqual(description, result.Content,
+            Assert.AreEqual(description, result.Content.Description,
                 "Description should return result from the addon service");
         }
 

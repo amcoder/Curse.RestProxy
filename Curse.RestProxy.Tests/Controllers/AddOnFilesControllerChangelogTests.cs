@@ -22,8 +22,8 @@ namespace Curse.RestProxy.Tests.Controllers
 
             var result = controller.Changelog(1, 2).Result;
 
-            Assert.IsInstanceOfType(result, typeof(OkNegotiatedContentResult<string>),
-                "Get should return Ok when the file is found");
+            Assert.IsTrue(result.GetType().FullName.StartsWith("System.Web.Http.Results.OkNegotiatedContentResult"),
+                "Changelog should return Ok when the file is found");
         }
 
         [TestMethod]
@@ -36,10 +36,10 @@ namespace Curse.RestProxy.Tests.Controllers
 
             var controller = new AddOnFilesController(addOnService);
 
-            var result = controller.Changelog(1, 2).Result as OkNegotiatedContentResult<string>;
+            dynamic result = controller.Changelog(1, 2).Result;
 
-            Assert.AreEqual(changelog, result.Content,
-                "Get should return result from the addon service");
+            Assert.AreEqual(changelog, result.Content.Changelog,
+                "Changelog should return result from the addon service");
         }
 
         [TestMethod]
@@ -54,7 +54,7 @@ namespace Curse.RestProxy.Tests.Controllers
             var result = controller.Changelog(1, 2).Result;
 
             Assert.IsInstanceOfType(result, typeof(NotFoundResult),
-                "Get should return not found when file does not exist");
+                "Changelog should return not found when file does not exist");
         }
     }
 }
