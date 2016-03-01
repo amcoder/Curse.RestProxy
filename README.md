@@ -34,7 +34,7 @@ POST requests:
 Usage of the Curse WCF services requires authentication with a valid username and password.
 Authenticating will return a token that can be used on subsequent calls to the services.
 
-To authenticate, send a POST request to `/api/authenticate`.
+#### Request
 
 	POST https://curse-rest-proxy.azurewebsites.net/api/authenticate
 	Content-Type: application/json
@@ -43,7 +43,7 @@ To authenticate, send a POST request to `/api/authenticate`.
 	  "password": "<your password>"
 	}
 
-If authentication with Curse is successful, the `/api/authenticate` endpoint will respond with:
+#### Success Response
 
 	200 Ok
 	Content-Type: application/json
@@ -61,39 +61,33 @@ If authentication with Curse is successful, the `/api/authenticate` endpoint wil
 	  "status": "Success"
 	}
 
-If authentication with Curse fails, the `/api/authenticate` endpoint will respond with:
+#### Authentication Failed
 
 	401 Unauthorized
 	Www-Authenticate: Token realm="api"
 
-If the POST data is missing or malformed, the `/api/authenticate` endpoint will respond with:
+#### Invalid Request
 
-	400 Bad request
+	400 Bad Request
 	Content-Type: application/json
 	{
 	  "message": "Username and password are required"
 	}
+
+#### Authorization Header
 
 Once authenticated, subsequent requests to the service must include the `Authorization` header with
 the value of `Token <userid>:<token>` where `userid` and `token` come from the authenticate response.
 For example:
 
 	GET https://curse-rest-proxy.azurewebsites.net/api/addon/1
-	Authorization: Token 12345:your token
+	Authorization: Token 12345:abcdef
 
 If the header is missing, not in the correct form, or the token is rejected by Curse, the API will
 respond with:
 
 	401 Unauthorized
 	Www-Authenticate: Token realm="api"
-
-The only unauthenticated endpoints are:
-
-	GET https://curse-rest-proxy.azurewebsites.net/api
-	GET https://curse-rest-proxy.azurewebsites.net/api/status
-	POST https://curse-rest-proxy.azurewebsites.net/api/authenticate
-
-Calls to any other endpoint must include a valid `Authorization` header.
 
 ### Get Add On
 
@@ -102,7 +96,7 @@ Get the details for an add on.
 #### Request
 
 	GET https://curse-rest-proxy.azurewebsites.net/api/addon/1
-	Content-Type: application/json
+	Authorization: Token 12345:abcdef
 
 #### Response
 
