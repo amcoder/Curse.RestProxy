@@ -7,6 +7,19 @@ Curse uses WCF services in SOAP binary transport mode, which makes communicating
 of a .NET environment very difficult. This proxy provides a thin REST wrapper around those services
 to allow other platforms easier access to the Curse client services.
 
+## Overview
+
+| Name                              | Endpoint                                                                                   | Description |
+|-----------------------------------|--------------------------------------------------------------------------------------------|-------------|
+| Home                              | GET https://curse-rest-proxy.azurewebsites.net/api                                         |             |
+| Status                            | GET https://curse-rest-proxy.azurewebsites.net/api/status                                  | Service Status |
+| [Authentication](#authentication) | POST https://curse-rest-proxy.azurewebsites.net/api/authenticate                           | Authentication |
+| Get AddOn                         | GET https://curse-rest-proxy.azurewebsites.net/api/addon/:id                               | Get the details for an addon |
+| Get addon description             | GET https://curse-rest-proxy.azurewebsites.net/api/addon/:id/description                   | Get the description of an addon |
+| Get addon files                   | GET https://curse-rest-proxy.azurewebsites.net/api/addon/:id/files                         | Get the list of files for this addon |
+| Get addon file                    | GET https://curse-rest-proxy.azurewebsites.net/api/addon/:addon_id/file/:file_id           | Get the details for a file |
+| Get addon file changelog          | GET https://curse-rest-proxy.azurewebsites.net/api/addon/:addon_id/file/:file_id/changelog | Get the changelog for a file |
+
 ## Usage
 
 ### Authentication
