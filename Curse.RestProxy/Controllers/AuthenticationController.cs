@@ -19,12 +19,12 @@ namespace Curse.RestProxy.Controllers
         [Route("authenticate", Name = "Authenticate")]
         public async Task<IHttpActionResult> Authenticate(AuthenticationRequest request)
         {
-            if(request == null || string.IsNullOrEmpty(request.UserName) || string.IsNullOrEmpty(request.Password))
+            if(request == null || string.IsNullOrEmpty(request.Username) || string.IsNullOrEmpty(request.Password))
                 return BadRequest("Username and password are required");
 
             var result = await ClientLoginService.LoginAsync(new LoginService.LoginRequest()
             {
-                Username = request.UserName,
+                Username = request.Username,
                 Password = request.Password
             });
 

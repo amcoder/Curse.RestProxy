@@ -26,7 +26,7 @@ namespace Curse.RestProxy.Tests.Controllers
 
             var response = controller.Authenticate(new Models.AuthenticationRequest()
             {
-                UserName = "username",
+                Username = "username",
                 Password = "password"
             }).Result;
 
@@ -52,7 +52,7 @@ namespace Curse.RestProxy.Tests.Controllers
 
             var result = controller.Authenticate(new Models.AuthenticationRequest()
             {
-                UserName = "username",
+                Username = "username",
                 Password = "password"
             }).Result;
 
@@ -72,7 +72,7 @@ namespace Curse.RestProxy.Tests.Controllers
 
             var result = controller.Authenticate(new Models.AuthenticationRequest()
             {
-                UserName = "username",
+                Username = "username",
                 Password = "password"
             }).Result as OkNegotiatedContentResult<LoginService.LoginResponse>;
 
@@ -95,7 +95,7 @@ namespace Curse.RestProxy.Tests.Controllers
 
             var result = controller.Authenticate(new Models.AuthenticationRequest()
             {
-                UserName = "username",
+                Username = "username",
                 Password = "password"
             }).Result;
 
@@ -134,7 +134,7 @@ namespace Curse.RestProxy.Tests.Controllers
 
             var result = controller.Authenticate(new Models.AuthenticationRequest()
             {
-                UserName = null,
+                Username = null,
                 Password = "password"
             }).Result;
 
@@ -154,7 +154,7 @@ namespace Curse.RestProxy.Tests.Controllers
 
             var result = controller.Authenticate(new Models.AuthenticationRequest()
             {
-                UserName = "username",
+                Username = "username",
                 Password = null
             }).Result;
 
