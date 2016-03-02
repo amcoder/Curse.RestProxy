@@ -145,6 +145,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\curse-rest-proxy.pubxml" />
     <None Include="Service References\AddOnService\AddOnService.wsdl" />
     <None Include="Service References\AddOnService\AddOnService.xsd">
       <SubType>Designer</SubType>
@@ -260,7 +261,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\curse-rest-proxy.pubxml" />
     <None Include="Service References\LoginService\ClientLoginService.wsdl" />
     <None Include="Service References\LoginService\ClientLoginService.xsd">
       <SubType>Designer</SubType>
