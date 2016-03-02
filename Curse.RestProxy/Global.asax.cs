@@ -8,7 +8,9 @@ namespace Curse.RestProxy
     {
         protected void Application_Start()
         {
-            TelemetryConfiguration.Active.InstrumentationKey = ConfigurationManager.AppSettings["APPINSIGHTS_INSTRUMENTATIONKEY"];
+            var insightsKey = ConfigurationManager.AppSettings["APPINSIGHTS_INSTRUMENTATIONKEY"];
+            if(!string.IsNullOrEmpty(insightsKey))
+                TelemetryConfiguration.Active.InstrumentationKey = insightsKey;
 
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
