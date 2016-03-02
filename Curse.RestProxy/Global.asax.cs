@@ -1,4 +1,6 @@
-﻿using System.Web.Http;
+﻿using System.Configuration;
+using System.Web.Http;
+using Microsoft.ApplicationInsights.Extensibility;
 
 namespace Curse.RestProxy
 {
@@ -6,6 +8,8 @@ namespace Curse.RestProxy
     {
         protected void Application_Start()
         {
+            TelemetryConfiguration.Active.InstrumentationKey = ConfigurationManager.AppSettings["APPINSIGHTS_INSTRUMENTATIONKEY"];
+
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }
