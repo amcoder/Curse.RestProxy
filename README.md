@@ -9,16 +9,16 @@ to allow other platforms easier access to the Curse client services.
 
 ## Overview
 
-| Name                              | Endpoint                                                                                   | Description |
-|-----------------------------------|--------------------------------------------------------------------------------------------|-------------|
-| Home                              | GET https://curse-rest-proxy.azurewebsites.net/api                                         |             |
-| Status                            | GET https://curse-rest-proxy.azurewebsites.net/api/status                                  | Service Status |
-| [Authentication](#authentication) | POST https://curse-rest-proxy.azurewebsites.net/api/authenticate                           | Authentication |
-| [Get Add On](#get-add-on)          | GET https://curse-rest-proxy.azurewebsites.net/api/addon/:id                               | Get the details for an add on |
-| Get addon description             | GET https://curse-rest-proxy.azurewebsites.net/api/addon/:id/description                   | Get the description of an addon |
-| Get addon files                   | GET https://curse-rest-proxy.azurewebsites.net/api/addon/:id/files                         | Get the list of files for this addon |
-| Get addon file                    | GET https://curse-rest-proxy.azurewebsites.net/api/addon/:addon_id/file/:file_id           | Get the details for a file |
-| Get addon file changelog          | GET https://curse-rest-proxy.azurewebsites.net/api/addon/:addon_id/file/:file_id/changelog | Get the changelog for a file |
+| Name                                                    | Endpoint                                                                                   | Description |
+|---------------------------------------------------------|--------------------------------------------------------------------------------------------|-------------|
+| Home                                                    | GET https://curse-rest-proxy.azurewebsites.net/api                                         |             |
+| Status                                                  | GET https://curse-rest-proxy.azurewebsites.net/api/status                                  | Service Status |
+| [Authentication](#authentication)                       | POST https://curse-rest-proxy.azurewebsites.net/api/authenticate                           | Authentication |
+| [Get Add On](#get-add-on)                               | GET https://curse-rest-proxy.azurewebsites.net/api/addon/:id                               | Get the details for an add on |
+| [Get Add On Description](#get-add-on-description)       | GET https://curse-rest-proxy.azurewebsites.net/api/addon/:id/description                   | Get the description of an add on |
+| [Get Add On Files](#get-add-on-files)                   | GET https://curse-rest-proxy.azurewebsites.net/api/addon/:id/files                         | Get the list of files for this add on |
+| [Get Add On File](#get-add-on-file)                     | GET https://curse-rest-proxy.azurewebsites.net/api/addon/:addon_id/file/:file_id           | Get the details for a file |
+| [Get Add On File Changelog](#get-add-on-file-changelog) | GET https://curse-rest-proxy.azurewebsites.net/api/addon/:addon_id/file/:file_id/changelog | Get the changelog for a file |
 
 ## Usage
 
@@ -196,6 +196,141 @@ Get the details for an add on.
 	  "rating": 0,
 	  "stage": "Release",
 	  "status": "Normal",
+	}
+
+### Get Add On Description
+
+Get the description for an add on.
+
+#### Request
+
+	GET https://curse-rest-proxy.azurewebsites.net/api/addon/1/description
+	Authorization: Token 12345:abcdef
+
+#### Response
+
+	200 Ok
+	Content-Type: application/json
+	{
+	  "description": "A long description of the add on. This may contain HTML."
+	}
+
+### Get Add On Files
+
+Get the files for an add on.
+
+#### Request
+
+	GET https://curse-rest-proxy.azurewebsites.net/api/addon/1/files
+	Authorization: Token 12345:abcdef
+
+#### Response
+
+	200 Ok
+	Content-Type: application/json
+	{
+	  "files": [
+		{
+		  "alternate_file_id": 0,
+		  "dependencies": [],
+		  "download_url": "http://example.com/path/to/file-1.0.1.zip",
+		  "file_date": "2015-11-07T20:36:26",
+		  "file_name": "file-1.0.0.zip",
+		  "file_name_on_disk": "file-1.0.0.zip",
+		  "file_status": "Normal",
+		  "game_version": [
+			"1.7.10"
+		  ],
+		  "id": 42,
+		  "is_alternate": false,
+		  "is_available": true,
+		  "modules": [
+			{
+			  "fingerprint": 9876543421,
+			  "foldername": "manifest.json"
+			}
+		  ],
+		  "package_fingerprint": 987654321,
+		  "release_type": "Release"
+		},
+		{
+		  "alternate_file_id": 0,
+		  "dependencies": [],
+		  "download_url": "http://example.com/path/to/file-1.0.0.zip",
+		  "file_date": "2015-10-07T20:36:26",
+		  "file_name": "file-1.0.0.zip",
+		  "file_name_on_disk": "file-1.0.0.zip",
+		  "file_status": "Normal",
+		  "game_version": [
+			"1.7.10"
+		  ],
+		  "id": 43,
+		  "is_alternate": false,
+		  "is_available": true,
+		  "modules": [
+			{
+			  "fingerprint": 9876543421,
+			  "foldername": "manifest.json"
+			}
+		  ],
+		  "package_fingerprint": 987654321,
+		  "release_type": "Release"
+		}
+	  ]
+	}
+
+### Get Add On File
+
+Get a specific file for an add on.
+
+#### Request
+
+	GET https://curse-rest-proxy.azurewebsites.net/api/addon/1/file/42
+	Authorization: Token 12345:abcdef
+
+#### Response
+
+	200 Ok
+	Content-Type: application/json
+	{
+	  "alternate_file_id": 0,
+	  "dependencies": [],
+	  "download_url": "http://example.com/path/to/file-1.0.1.zip",
+	  "file_date": "2015-11-07T20:36:26",
+	  "file_name": "file-1.0.0.zip",
+	  "file_name_on_disk": "file-1.0.0.zip",
+	  "file_status": "Normal",
+	  "game_version": [
+		"1.7.10"
+	  ],
+	  "id": 42,
+	  "is_alternate": false,
+	  "is_available": true,
+	  "modules": [
+		{
+		  "fingerprint": 9876543421,
+		  "foldername": "manifest.json"
+		}
+	  ],
+	  "package_fingerprint": 987654321,
+	  "release_type": "Release"
+	}
+
+### Get Add On File Changelog
+
+Get the changelog for an add on file.
+
+#### Request
+
+	GET https://curse-rest-proxy.azurewebsites.net/api/addon/1/file/42/changelog
+	Authorization: Token 12345:abcdef
+
+#### Response
+
+	200 Ok
+	Content-Type: application/json
+	{
+	  "changelog": "A changelog for the file. This may contain HTML."
 	}
 
 ## License
