@@ -333,6 +333,15 @@ Get the changelog for an add on file.
 	  "changelog": "A changelog for the file. This may contain HTML."
 	}
 
+## Project Feed
+
+The Curse WCF services do not seem to provide a way to get a list of all add ons, nor a
+way to search for an add on. It assumes you already know the id of the add on you need.
+
+The official Curse Client uses a json feed of all of the add ons for a game to get its list.
+
+See: https://github.com/amcoder/Curse.RestProxy/wiki/Curse-Project-Feed
+
 ## License
 
 Curse REST Proxy is released under the [MIT license](https://opensource.org/licenses/MIT).
